@@ -10,7 +10,7 @@ export default function Nosotros() {
 
             <div className="absolute inset-0 z-10 w-full">
 
-                <div className="max-w-7xl mx-auto h-full grid grid-cols-[40%_34%_26%]">
+                <div className="max-w-7xl xl:max-w-[90%] mx-auto h-full grid grid-cols-[40%_34%_26%]">
 
                     <div className=" flex items-center p-6">
                         <p className="font-nosotros text-white text-4xl w-52 md:-mt-10">

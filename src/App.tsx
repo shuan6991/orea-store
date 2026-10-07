@@ -18,7 +18,7 @@ function App() {
         <Hero />
       </section>
 
-      <main className="my-12 max-w-7xl mx-auto space-y-15">
+      <main className="my-12 max-w-7xl xl:max-w-[90%] mx-auto space-y-15">
         <Categorias />
         <Favoritos />
       </main>
