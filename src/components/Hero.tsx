@@ -4,11 +4,11 @@ export default function Hero() {
     return (
         <div className="relative">
 
-            <img className="w-full" src="hero-1.jpg" alt="imagen hero" />
+            <img className="w-full  h-50 md:h-full" src="hero-1.jpg" alt="imagen hero" />
 
             <div className="absolute inset-0 bg-black/20" />
 
-            <div className="absolute max-w-7xl w-[90%] mx-auto inset-0 flex flex-col justify-center items-end text-right space-y-2 md:space-y-7">
+            <div className="absolute max-w-7xl mx-auto inset-0 flex flex-col justify-center items-end text-right space-y-2 md:space-y-7">
 
                 <p className="text-sm sm:text-xl text-white font-semibold">Estilo que te acompaña</p>
                 <h2 className="font-hero text-2xl sm:text-5xl lg:text-7xl text-white font-bold leading-tight">

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
-@theme {
+@theme{
   --font-hero: "Playfair Display", serif;
+  --font-nosotros: "Dancing Script", cursive;
 }
+

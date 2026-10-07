@@ -13,8 +13,8 @@ export default function Header() {
                 </ul>
             </nav>
 
-
             <LuShoppingBag className="text-white cursor-pointer" size={25}/>
+            
         </div>
     )
 }

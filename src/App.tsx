@@ -1,6 +1,8 @@
 import Categorias from "./components/Categorias"
+import Favoritos from "./components/Favoritos"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import Nosotros from "./components/Nosotros"
 
 
 function App() {
@@ -16,9 +18,14 @@ function App() {
         <Hero />
       </section>
 
-      <main className="my-12 max-w-7xl mx-auto">
-          <Categorias />
+      <main className="my-12 max-w-7xl mx-auto space-y-15">
+        <Categorias />
+        <Favoritos />
       </main>
+
+      <section className="bg-gray-50">
+        <Nosotros />
+      </section>
 
 
     </>
