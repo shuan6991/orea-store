@@ -4,15 +4,15 @@ import { FaRegHeart } from "react-icons/fa";
 
 export default function Nosotros() {
     return (
-        <div className="mt-5 relative grid grid-cols-[40%_60%]">
+        <div className="mt-5 lg:relative grid lg:grid-cols-[40%_60%]">
 
-            <img src="./nosotros-orea.png" alt="imagen nosotros" />
+            <img className="hidden lg:block" src="./nosotros-orea.png" alt="imagen nosotros" />
 
-            <div className="absolute inset-0 z-10 w-full">
+            <div className="lg:absolute inset-0 z-10 w-full">
 
-                <div className="max-w-7xl xl:max-w-[90%] mx-auto h-full grid grid-cols-[40%_34%_26%]">
+                <div className="max-w-7xl xl:max-w-[90%] mx-auto h-full grid sm:grid-cols-[60%_40%] lg:grid-cols-[40%_34%_26%]">
 
-                    <div className=" flex items-center p-6">
+                    <div className="hidden lg:flex items-center p-6">
                         <p className="font-nosotros text-white text-4xl w-52 md:-mt-10">
                                 Mas que accesorios, es una forma de expresarte
                         </p>
@@ -33,7 +33,7 @@ export default function Nosotros() {
 
 
                     <div className="flex flex-col justify-center gap-4 p-6 border-l border-gray-300">
-                        <div className="grid grid-cols-[10%_90%] gap-4">
+                        <div className="grid grid-cols-[10%_90%] gap-2 sm:gap-4">
                             <TbDiamond size={33} />
                             <p className="text-dm">
                                 <span className="font-bold block">Materiales de buena calidad </span>

@@ -1,5 +1,11 @@
 export type Category={
     id: number
-    name: string,
+    name: string
     img: string
+}
+
+
+export type Person={
+    name: string
+    whatsapp: string
 }

@@ -1,32 +1,45 @@
-import Categorias from "./components/Categorias"
-import Favoritos from "./components/Favoritos"
+
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Header from "./components/Header"
-import Hero from "./components/Hero"
-import Nosotros from "./components/Nosotros"
+import Home from './components/Home'
 
 
 function App() {
 
+  function ScrollToHash() {
+    const { hash } = useLocation()
+
+    useEffect(() => {
+      if (hash) {
+        setTimeout(() => {
+          const element = document.getElementById(hash.replace("#", ""))
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" })
+          }
+        }, 0)
+      }
+    }, [hash])
+
+    return null
+  }
+
 
   return (
     <>
-      <header className="bg-gray-950 p-3 shadow-[0_10px_18px_-2px] shadow-black/60 z-10 relative">
-        <Header />
-      </header>
+      <BrowserRouter>
 
-      <section className="shadow-lg">
-        <Hero />
-      </section>
+        <ScrollToHash />
 
-      <main className="my-12 max-w-7xl xl:max-w-[90%] mx-auto space-y-15">
-        <Categorias />
-        <Favoritos />
-      </main>
+        <header className="bg-gray-950 p-3 shadow-[0_10px_18px_-2px] shadow-black/60 z-10 relative">
+          <Header />
+        </header>
 
-      <section className="bg-gray-50">
-        <Nosotros />
-      </section>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
 
+      </BrowserRouter>
 
     </>
   )
