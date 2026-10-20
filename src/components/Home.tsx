@@ -18,7 +18,7 @@ export default function Home() {
                 <Favoritos />
             </main>
 
-            <section id="nosotros" className="bg-gray-50 py-5 lg:p-0">
+            <section id="nosotros" className="bg-gray-50 py-5 lg:p-0 overflow-hidden">
                 <Nosotros />
             </section>
 

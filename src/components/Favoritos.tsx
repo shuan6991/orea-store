@@ -1,6 +1,7 @@
 import { FiArrowRight } from 'react-icons/fi'
 import { categories } from '../db/categories'
 import CategoriesDetails from './CategoriesDetails'
+import { motion } from 'motion/react'
 
 export default function
   () {
@@ -9,7 +10,13 @@ export default function
       <p className="text-sm uppercase">Productos destacados</p>
 
       <div className="md:flex flex-row justify-between items-center">
-        <h2 className="text-3xl md:text-5xl font-hero">Lo más vendido</h2>
+        <motion.h2
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-3xl md:text-5xl font-hero">Lo más vendido
+        </motion.h2>
 
         <a className="mt-2 text-sm uppercase flex gap-2 items-center" href="#">
           Ver todas  <FiArrowRight />

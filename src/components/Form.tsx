@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { usePerson } from "../hooks/usePerson"
 import type { Person } from "../types"
+import {motion} from 'motion/react'
 
 
 const initialState = {
@@ -33,7 +34,11 @@ export default function Form() {
     return (
         <div className="w-[90%] max-w-7xl xl:max-w-[90%] mx-auto lg:absolute lg:inset-0 flex flex-col lg:justify-center items-center lg:items-start">
 
-            <form
+            <motion.form
+                initial={{opacity:0, scale:0}}
+                whileInView={{opacity:1, scale:1}}
+                viewport={{once: true}}
+                transition={{duration: 1}}
                 className="w-full lg:w-[40%] p-5 border border-white space-y-5"
                 onSubmit={handleSubmit}
             >
@@ -69,7 +74,7 @@ export default function Form() {
                 </div>
                 <input type="submit" className="w-full uppercase p-2 bg-gray-200 hover:bg-gray-300 font-bold text-lg cursor-pointer" value="Enviar datos" />
 
-            </form>
+            </motion.form>
         </div>
     )
 }
