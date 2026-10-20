@@ -5,7 +5,7 @@ import { motion } from 'motion/react'
 
 export default function Nosotros() {
     return (
-        <div className="mt-5 lg:relative grid lg:grid-cols-[40%_60%]">
+        <div className="lg:relative grid lg:grid-cols-[40%_60%]">
 
             <img className="hidden lg:block" src="./nosotros-orea.png" alt="imagen nosotros" />
 
@@ -42,6 +42,14 @@ export default function Nosotros() {
                             Por eso, seleccionamos cuidadosamente cada diseño para que te acompañe en lo que
                             más importa
                         </p>
+
+                        <motion.a
+                            href="#"
+                            className="block border p-2 rounded-3xl"
+                            whileHover={{backgroundColor:'#111827', color:"#ffffff" }}
+                        >
+                            Contactanos
+                        </motion.a>
                     </div>
 
 

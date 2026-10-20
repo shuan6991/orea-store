@@ -1,7 +1,7 @@
 import { FiArrowRight } from 'react-icons/fi'
-import { categories } from '../db/categories'
-import CategoriesDetails from './CategoriesDetails'
 import { motion } from 'motion/react'
+import { favoritos } from '../db/favotiros'
+import FavoritosDetails from './FavoritosDetails'
 
 export default function
   () {
@@ -25,10 +25,10 @@ export default function
       </div>
 
       <div className='flex flex-col md:grid md:grid-cols-5 gap-4 justify-between'>
-        {categories.map(cat => (
-          <CategoriesDetails
-            key={cat.id}
-            cat={cat}
+        {favoritos.map(fav => (
+          <FavoritosDetails
+            key={fav.name}
+            fav={fav}
           />
         ))}
       </div>
