@@ -1,17 +1,17 @@
 import { useState } from "react"
-import { usePerson } from "../hooks/usePerson"
+import emailjs from "@emailjs/browser"
 import type { Person } from "../types"
-import {motion} from 'motion/react'
+import { motion } from 'motion/react'
 
 
 const initialState = {
     name: '',
-    whatsapp: ''
+    whatsapp: '',
+    email: ''
 }
 
 export default function Form() {
 
-    const { dispatch } = usePerson()
 
     const [person, setPerson] = useState<Person>(initialState)
 
@@ -23,22 +23,41 @@ export default function Form() {
     }
 
 
-    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault()
-        dispatch({ type: 'add-person', payload: { person } })
 
+        try {
+            await emailjs.send(
+                "service_4dgxwvu",
+                "template_eorg9me",
+                {
+                    name: person.name,
+                    whatsapp: person.whatsapp,
+                    email: person.email
+                },
 
-        setPerson(initialState)
+                {
+                    publicKey: "OHeQh1SD3dZrqJE1g"
+                }
+
+            );
+
+            setPerson(initialState)
+            alert("¡Mensaje enviado correctamente!");
+        } catch (error) {
+            console.error("Error al enviar el correo:", error);
+            alert("No fue posible enviar el mensaje. Inténtalo nuevamente.");
+        }
     }
 
     return (
         <div className="w-[90%] max-w-7xl xl:max-w-[90%] mx-auto lg:absolute lg:inset-0 flex flex-col lg:justify-center items-center lg:items-start">
 
             <motion.form
-                initial={{opacity:0, scale:0}}
-                whileInView={{opacity:1, scale:1}}
-                viewport={{once: true}}
-                transition={{duration: 1}}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
                 className="w-full lg:w-[40%] p-5 border border-white space-y-5"
                 onSubmit={handleSubmit}
             >
@@ -69,6 +88,19 @@ export default function Form() {
                         name="whatsapp"
                         id="whatsapp"
                         value={person.whatsapp}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                    <label className="font-semibold text-white text-lg" htmlFor="email">Correo :</label>
+                    <input
+                        type="email"
+                        className="w-full p-2 border border-white rounded-lg text-white"
+                        placeholder="Tu whatsapp"
+                        name="email"
+                        id="email"
+                        value={person.email}
                         onChange={handleChange}
                     />
                 </div>

@@ -14,4 +14,5 @@ export type Favorito ={
 export type Person={
     name: string
     whatsapp: string
+    email: string
 }
