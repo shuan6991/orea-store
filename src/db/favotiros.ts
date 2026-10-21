@@ -1,8 +1,8 @@
 
 export const favoritos = [
-    {name:'Aretes Corazon', precio: 10000, img: 'pendientesCorazon'},
-    {name:'Aretes Moño', precio: 10000, img: 'aretesMoño'},
-    {name:'Aretes Corazon Dorado', precio: 10000, img: 'aretesCorazonesDorados'},
-    {name:'Aretes Corazon', precio: 10000, img: 'pendientesCorazon'},
-    {name:'Aretes Corazon', precio: 10000, img: 'pendientesCorazon'}
+    {name:'Topos Corazon Perlas', precio: 10000, img: 'aretesCorazonPerlas'},
+    {name:'Topos Moño', precio: 10000, img: 'aretesMoño'},
+    {name:'Topos Corazon Dorado', precio: 10000, img: 'aretesCorazonesDorados'},
+    {name:'Candongas Gotas Nacar', precio: 10000, img: 'candongasBolas'},
+    {name:'Topos Flor Dorados', precio: 10000, img: 'aretesFlorDorados'}
 ]
