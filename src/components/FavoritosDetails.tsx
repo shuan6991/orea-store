@@ -1,6 +1,7 @@
 import type { Favorito } from "../types"
 import {motion} from 'motion/react'
 
+
 type FavoritosDetailsProps = {
     fav: Favorito
 }

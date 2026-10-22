@@ -1,7 +1,14 @@
 import { FiArrowRight } from 'react-icons/fi'
 import { motion } from 'motion/react'
 import { favoritos } from '../db/favotiros'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import FavoritosDetails from './FavoritosDetails'
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 export default function
   () {
@@ -18,22 +25,30 @@ export default function
           className="text-3xl md:text-5xl font-hero">Lo más vendido
         </motion.h2>
 
-        <a className="mt-2 text-sm uppercase flex gap-2 items-center" href="#">
-          Ver todas  <FiArrowRight />
-        </a>
-
-      </div>
-
-      <div className='flex flex-col md:grid md:grid-cols-5 gap-4 justify-between'>
-        {favoritos.map(fav => (
-          <FavoritosDetails
-            key={fav.name}
-            fav={fav}
-          />
-        ))}
-      </div>
-
-
     </div>
+
+
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={50}
+        slidesPerView={5}
+        navigation
+        pagination={{ clickable: true }}
+      >
+        {favoritos.map(fav => (
+          <SwiperSlide>
+
+            <FavoritosDetails
+              key={fav.name}
+              fav={fav}
+            />
+
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+
+
+    </div >
   )
 }
