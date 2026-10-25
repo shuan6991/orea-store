@@ -46,7 +46,7 @@ export default function ProductosDestacados() {
           loop={true}
           autoplay={{
             delay: 3000,                  
-            disableOnInteraction: false,
+            disableOnInteraction: false
           }}
           navigation={{
             nextEl: '.custom-next',
