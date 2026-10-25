@@ -5,3 +5,15 @@
   --font-nosotros: "Dancing Script", cursive;
 }
 
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-navigation-color: #0d0d0d;
+}
+
+:root {
+  --swiper-pagination-color: #0d0d0d;
+  --swiper-pagination-bullet-inactive-color: #cccccc;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
